@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+        <style>
+            .search_container {
+                margin: 20px auto;
+            }
+            #txt_search{
+                border: solid 1px #555;
+                font-size: 2em;
+            }
+            #output_container {
+                margin:0 auto;
+                display: none;
+            }
+            #output_container > div {
+                font-size: 2em;
+            }
+            #output_container > div:hover {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="search_container">
+                    <input type="text" id="txt_search"  class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div id="output_container">
+                    <div>Meghna River Basin</div>
+                    <div>Ganges River Basin</div>
+                    <div>West Bengal Coastal</div>
+                    <div>Odisha Coastal</div>
+                    <div>Godavari River Basin</div>
+                    <div>Krishna River Basin</div>
+                    <div>Pennar River Basin</div>
+                    <div>Kaveri River Basin</div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script>
+                // $('#output_container').hide();
+            $('#txt_search').focusin(function(){
+                $('#output_container').show();
+            }).focusout(function(){
+                $('#output_container').hide();
+
+            }); 
+            //store = $('#txt_search').val();
+            // if(store == ""){
+            //     $('#output_container').show();
+            // }
+              
+            $('#txt_search').keydown(function(e){
+                k = e.keyCode;
+                // store = $('#txt_search').val();
+
+                // if(k == 08 && store == ""){
+                //     $('#output_container').show();
+                // }
+
+                //homework - when backspace is pressed and textbox is made empty
+                //           you should reload the whole list
+
+
+                // // console.log(k)
+
+                // if(k>=48 && k<58) {
+
+                // }
+                // else {
+                //     return false;
+                // }
+                // $('#output_container').hide();
+
+                
+
+                
+                $('#output_container').children().each(function(a, b){
+                    // console.log(a, $(b).html());
+                    // console.log($(this).html());
+                    $(b).show();//a
+                    
+                    //pull the current div element in 
+                    // #output_container's children()
+                    str = $(b).html().toLowerCase(); 
+                    
+                    // console.log('DINESH', 'DINESH'.toLowerCase())
+                    //pull the value from textbox
+                     curr_key="";
+                    if((k>=97 && k<=122) || (k>=65 && k<=90) ){
+                        curr_key = String.fromCharCode(k).toLowerCase();
+                    }
+                    target = $('#txt_search').val().toLowerCase() + curr_key; 
+                    
+                //      store = $('#txt_search').val();
+                //     if(k == 08 && store == ""){
+                //         target = "";
+                // }
+
+                    if(k == 08){
+                        //target = target.substring(0, str.target - 1);
+                        target = target.slice(0, -1); 
+                     }
+                     console.log("str: " + str, "target: " + target, "index: " + str.indexOf(target), "curr_key: " + curr_key);
+                     
+                        // if(k == 8 && curr_key == "" && store == ""){
+                        //     console.log("done");
+                        //     $('#output_container').show();
+                        // }
+
+                   
+
+                     
+
+                    if(str.indexOf(target) == -1){
+                        $(b).hide();
+                    }
+                    // if(str.indexOf(target) > -1){
+                    //     $('#output_container').show();
+                    // }
+                })
+            });
+        </script>
+    </body>
+</html>
