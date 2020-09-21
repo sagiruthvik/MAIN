@@ -1,0 +1,117 @@
+$my_color : rgb(33, 35, 42);
+
+body{
+    margin: 0em;
+    padding: 0em;
+    font-family: 'MuseoModerno', cursive;
+}
+
+.container{
+    background-color: $my_color;
+    color: white;
+    .nav{
+        background-color: darken($my_color, 10%);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 80px;
+        padding: 10px;
+        float: left;
+        position: fixed;
+    }.list{
+        list-style-type: none;
+        margin-left: -50px;
+        text-align: center;
+        .list_item{
+            padding: 30px;
+            &:hover{
+                background-color: rgb(83,128,232);
+                border-radius: 10%;
+                cursor: pointer;
+            }
+        }
+        }.list_item_img{
+            .list_image{
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                margin-top: -20px;
+                &:hover{
+                    border: 2px solid $my_color;
+                    cursor: pointer;
+                }
+            }
+        }
+    .cards{
+        padding: 20px;
+        background-color: $my_color;
+        width: 60%;
+        float: left;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-left: 100px;
+        .head{
+            display: inline;
+            padding: 5px;
+            width: 60%;
+            .heading{
+                margin-left: -150px;
+                margin-top: -5px;
+            }
+            .head_p, .icons{
+                float: right;
+                margin-top: -53px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .icons{
+                margin-right: -30px;
+                border-radius: 20%;
+            }
+        }
+        .each_card{
+            box-shadow: 0 4px 8px 0 darken($my_color, 30%);
+            transition: 0.3s;
+            width: 40%;
+            background-color: lighten($my_color, 10%);
+            margin-top: 20px;
+            &:hover{
+                box-shadow: 0 8px 16px 0 darken($my_color, 100%);
+                cursor: pointer;
+            }
+            .card_img{
+                height: 170px;
+                width: 300px;
+            }
+        }
+        .each_card_details{
+            padding: 2px 16px;
+        }
+        .icon{
+            padding: 5px;
+        }
+    }
+    .map{
+        position: fixed;
+        margin-left: 1000px;
+        height: 100%;
+    }
+}
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

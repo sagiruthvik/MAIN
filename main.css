@@ -1,0 +1,118 @@
+body {
+  margin: 0em;
+  padding: 0em;
+  font-family: "MuseoModerno", cursive;
+}
+
+.container {
+  background-color: #21232a;
+  color: white;
+}
+.container .nav {
+  background-color: #0b0b0d;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  padding: 10px;
+  float: left;
+  position: fixed;
+}
+.container .list {
+  list-style-type: none;
+  margin-left: -50px;
+  text-align: center;
+}
+.container .list .list_item {
+  padding: 30px;
+}
+.container .list .list_item:hover {
+  background-color: #5380e8;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.container .list_item_img .list_image {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-top: -20px;
+}
+.container .list_item_img .list_image:hover {
+  border: 2px solid #21232a;
+  cursor: pointer;
+}
+.container .cards {
+  padding: 20px;
+  background-color: #21232a;
+  width: 60%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 100px;
+}
+.container .cards .head {
+  display: inline;
+  padding: 5px;
+  width: 60%;
+}
+.container .cards .head .heading {
+  margin-left: -150px;
+  margin-top: -5px;
+}
+.container .cards .head .head_p, .container .cards .head .icons {
+  float: right;
+  margin-top: -53px;
+}
+.container .cards .head .head_p:hover, .container .cards .head .icons:hover {
+  cursor: pointer;
+}
+.container .cards .head .icons {
+  margin-right: -30px;
+  border-radius: 20%;
+}
+.container .cards .each_card {
+  box-shadow: 0 4px 8px 0 black;
+  transition: 0.3s;
+  width: 40%;
+  background-color: #373b47;
+  margin-top: 20px;
+}
+.container .cards .each_card:hover {
+  box-shadow: 0 8px 16px 0 black;
+  cursor: pointer;
+}
+.container .cards .each_card .card_img {
+  height: 170px;
+  width: 345px;
+}
+.container .cards .each_card_details {
+  padding: 2px 16px;
+}
+.container .cards .icon {
+  padding: 5px;
+}
+.container .map {
+  position: fixed;
+  margin-left: 1000px;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*# sourceMappingURL=main.css.map */
