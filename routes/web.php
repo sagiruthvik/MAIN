@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/clicked', function(){
-    $user = new App\Models\form();
-    $user->name = "Arya Stark";
-    $user->save();
-});
+Route::any('/submit','App\Http\Controllers\test@save');
+Route::get('/test_route','App\Http\Controllers\test@show_route');
+
+Route::resource('test_route', TestController::class);
