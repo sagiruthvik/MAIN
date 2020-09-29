@@ -6,10 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/test_route" method="POST">
+<form action="/store" method="POST">
     @csrf
-<input type="text" name="input" placeholder="name"/>
-<button type="submit">CLICK ME</button>
+<input type="text" name="fname" placeholder="first-name"/>
+<input type="text" name="lname" placeholder="last-name"/>
+<input type="number" name="age" placeholder="age"/>
+
+<button type="submit">store</button>
 </form>
 </body>
 </html>
